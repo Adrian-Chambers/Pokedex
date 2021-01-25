@@ -1,8 +1,9 @@
 import React from 'react';
-import Abilities from './components/Abilities';
-import Moves from './components/Moves';
-import Stats from './components/Stats';
-import Types from './components/Types';
+import Abilities from './Abilities';
+import Moves from './Moves';
+import Stats from './Stats';
+import Types from './Types';
+import './Components.css'
 
 const Pokemon = ({pokemon}) => {
     if(!pokemon.id){
@@ -12,11 +13,11 @@ const Pokemon = ({pokemon}) => {
         const {name, id, sprites, height, weight, types, stats, moves, abilities} = pokemon;
         return(
             <div>
-                <div className="flex">
+                <div className="flex container pl2 pr2">
                     <h1>{name.charAt(0).toUpperCase() + name.slice(1)}</h1>
                     <p>(#{id})</p>
                 </div>
-                <div className="flex">
+                <div className="flex container pa2">
                     <div className="w-25">
                         <img className="sprite" src={sprites.front_default} alt="sprite" />
                     </div>
@@ -25,7 +26,7 @@ const Pokemon = ({pokemon}) => {
                         <p><strong>Weight:</strong> {weight}</p>
                         <Types types={types} />
                     </div>
-                    <Stats className="w-50" stats={stats} />
+                    <Stats stats={stats} />
                 </div>
                 <Abilities abilities={abilities}/>
                 <Moves moves={moves} />

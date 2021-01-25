@@ -1,6 +1,6 @@
 import './App.css'
 import React from 'react';
-import Pokemon from './Pokemon';
+import Pokemon from './components/Pokemon';
 
 class App extends React.Component {
   constructor () {
@@ -25,7 +25,7 @@ class App extends React.Component {
         </div>
         <br />
         <div className="app-outline">
-          <div className="tc">
+          <div className="tc mb3">
             <input className="tc" type="text" onChange={this.onSearchChange}/>
           </div>
           <Pokemon pokemon={pokemon}/>
