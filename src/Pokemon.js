@@ -13,18 +13,22 @@ const Pokemon = ({pokemon}) => {
         return(
             <div>
                 <div className="flex">
-                    <h1>{name}</h1>
+                    <h1>{name.charAt(0).toUpperCase() + name.slice(1)}</h1>
                     <p>(#{id})</p>
                 </div>
                 <div className="flex">
-                    <img src={sprites.front_default} alt="sprite" />
-                    <p>Height: {height}</p>
-                    <p>Weight: {weight}</p>
-                    <Types types={types} />
+                    <div className="w-25">
+                        <img className="sprite" src={sprites.front_default} alt="sprite" />
+                    </div>
+                    <div className="w-25">
+                        <p><strong>Height:</strong> {height}</p>
+                        <p><strong>Weight:</strong> {weight}</p>
+                        <Types types={types} />
+                    </div>
+                    <Stats className="w-50" stats={stats} />
                 </div>
-                <Stats stats={stats} />
-                <Moves moves={moves} />
                 <Abilities abilities={abilities}/>
+                <Moves moves={moves} />
             </div>
         );
     }

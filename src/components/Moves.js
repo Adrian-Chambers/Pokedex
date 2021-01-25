@@ -1,16 +1,16 @@
 import React from 'react';
-import './Components.css';
+import './Components.css'
 
 const Moves = ({moves}) => {
     return(
-        <>
-        <p>Moves:</p>
-        <div className="flex flex-wrap scroll-moves">
-            {moves.map(i => 
-                <p className="w-25">{i.move.name}</p>
-            )}
+        <div className="container">
+            <p><strong>Moves:</strong></p>
+            <div className="flex flex-wrap scroll-moves">
+                {moves.map(i => 
+                    <p className="w-25">{i.move.name}</p>
+                )}
+            </div>
         </div>
-        </>
     )
 }
 

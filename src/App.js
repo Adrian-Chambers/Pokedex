@@ -7,25 +7,17 @@ class App extends React.Component {
     super();
     this.state = {
       pokemon: {},
-      searchfield: ''
     }
   }
 
-  componentDidMount(){
-    fetch('https://pokeapi.co/api/v2/pokemon/ditto')
-    .then(response => response.json())
-    .then(users => this.setState({robots: users}));
-  }
-
   onSearchChange = (event) => {
-      this.setState({searchfield: event.target.value});
-      fetch('https://pokeapi.co/api/v2/pokemon/' + event.target.value)
+      fetch('https://pokeapi.co/api/v2/pokemon/' + (event.target.value).toLowerCase())
       .then(response => response.json())
       .then(p => this.setState({pokemon: p}));
   }
 
   render(){
-    const { pokemon, searchfield } = this.state;
+    const { pokemon } = this.state;
     return ( 
       <>
         <div className="tc pt4">
