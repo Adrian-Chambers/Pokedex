@@ -2,9 +2,11 @@ import React from 'react';
 
 const Abilities = ({abilities}) => {
     return(
-        abilities.map(i => 
-            <p>{i.ability.name}</p>
-        )
+        <div className="flex flex-wrap">
+            {abilities.map(i => 
+                <p className="w-25">{i.ability.name}</p>
+            )}
+        </div>
     )
 }
 

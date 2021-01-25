@@ -1,0 +1,28 @@
+.hp{
+
+}
+
+.attack{
+
+}
+
+.defense{
+
+}
+
+.sp-attack{
+
+}
+
+.sp-defense{
+
+}
+
+.speed{
+
+}
+
+.scroll-moves{
+    max-height: 200px;
+    overflow-y: scroll;
+}

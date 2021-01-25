@@ -1,5 +1,5 @@
+import './App.css'
 import React from 'react';
-import './App.css';
 import Pokemon from './Pokemon';
 
 class App extends React.Component {
@@ -27,11 +27,18 @@ class App extends React.Component {
   render(){
     const { pokemon, searchfield } = this.state;
     return ( 
-      <div className="tc pt5">
-          <h1>Pokedex</h1>
-          <input type="text" onChange={this.onSearchChange}/>
+      <>
+        <div className="tc pt4">
+          <img src="https://fontmeme.com/permalink/210124/66b2e5f0523ae4f5e846c15d2d14c218.png" alt="Pokedex" border="0" />
+        </div>
+        <br />
+        <div className="app-outline">
+          <div className="tc">
+            <input className="tc" type="text" onChange={this.onSearchChange}/>
+          </div>
           <Pokemon pokemon={pokemon}/>
-      </div>
+        </div>
+      </>
     ); 
   }
 }
